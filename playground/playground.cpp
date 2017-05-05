@@ -9,6 +9,8 @@ GLFWwindow* window;
 #include <glm/glm.hpp>
 using namespace glm;
 
+#include <common/shader.hpp>
+
 int main( void )
 {
   if (!glfwInit()) {
@@ -36,9 +38,51 @@ int main( void )
     return -1;
   }
 
+  // VAO
+  GLuint VertexArrayID;
+  glGenVertexArrays(1, &VertexArrayID);
+  glBindVertexArray(VertexArrayID);
+
+  // Dark blue background
+  glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+
   glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
+  // シェーダからGLSLプログラムを作りコンパイルする
+  GLuint programID = LoadShaders("shader/SimpleVertexShader.vertexshader", "shader/SimpleFragmentShader.fragmentshader");
+
+  // 3頂点
+  static const GLfloat g_vertex_buffer_data[] = {
+    -1.0f, -1.0f, 0.0f,
+    1.0f, -1.0f, 0.0f,
+    0.0f, 1.0f, 0.0f,
+  };
+
+  GLuint vertexbuffer;
+  glGenBuffers(1, &vertexbuffer);
+  glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+
   do {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // User our shader
+    glUseProgram(programID);
+
+    // First attribute buffer : vertices
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    glVertexAttribPointer(
+                          0,
+                          3,
+                          GL_FLOAT,
+                          GL_FALSE,
+                          0,
+                          (void*)0
+                          );
+    // Draw the triangle
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDisableVertexAttribArray(0);
 
     // バッファをスワップする
     glfwSwapBuffers(window);

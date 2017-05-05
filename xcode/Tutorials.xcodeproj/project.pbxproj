@@ -2982,6 +2982,8 @@
 		C9981AEEE6FC4A4DA3410EBB /* color4.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = color4.inl; path = "external/assimp-3.0.1270/include/assimp/color4.inl"; sourceTree = SOURCE_ROOT; };
 		CA73488745F84B8C9005DCD0 /* DefaultIOSystem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DefaultIOSystem.cpp; path = "external/assimp-3.0.1270/code/DefaultIOSystem.cpp"; sourceTree = SOURCE_ROOT; };
 		CA75991E1BB44D02B1A8E27A /* vboindexer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = vboindexer.cpp; path = common/vboindexer.cpp; sourceTree = SOURCE_ROOT; };
+		CAD7835C1EBCA56A0065F61D /* SimpleVertexShader.vertexshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleVertexShader.vertexshader; path = playground/shader/SimpleVertexShader.vertexshader; sourceTree = "<group>"; };
+		CAD7835F1EBCAE3E0065F61D /* en */ = {isa = PBXFileReference; name = en; path = en.lproj/SimpleFragmentShader.fragmentshader; sourceTree = "<group>"; };
 		CADA9D965049446CB6AE228E /* btPolyhedralContactClipping.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = btPolyhedralContactClipping.cpp; path = "external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.cpp"; sourceTree = SOURCE_ROOT; };
 		CB54258EEDFD4A44807E87FC /* cexport.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cexport.h; path = "external/assimp-3.0.1270/include/assimp/cexport.h"; sourceTree = SOURCE_ROOT; };
 		CBA0BED1664E4B0AA8486761 /* GenericProperty.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GenericProperty.h; path = "external/assimp-3.0.1270/code/GenericProperty.h"; sourceTree = SOURCE_ROOT; };
@@ -5117,6 +5119,7 @@
 			isa = PBXGroup;
 			children = (
 				5554360589344804AFE59917 /* Source Files */,
+				CAD7835E1EBCA5710065F61D /* shaders */,
 				259B874FFBDD43C1872500E1 /* common */,
 				41C7C92AEF4E41348D2CC277 /* CMakeLists.txt */,
 			);
@@ -5657,6 +5660,15 @@
 				042395C017D2486CBD44D949 /* btVector3.h */,
 			);
 			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		CAD7835E1EBCA5710065F61D /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7835C1EBCA56A0065F61D /* SimpleVertexShader.vertexshader */,
+				CAD783601EBCAE3E0065F61D /* SimpleFragmentShader.fragmentshader */,
+			);
+			name = shaders;
 			sourceTree = "<group>";
 		};
 		CBBC8D5967BB4947B0DDBA70 /* Source Files */ = {
@@ -9570,6 +9582,18 @@
 			targetProxy = 704B4FA7F62847A0880A2BE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CAD783601EBCAE3E0065F61D /* SimpleFragmentShader.fragmentshader */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAD7835F1EBCAE3E0065F61D /* en */,
+			);
+			name = SimpleFragmentShader.fragmentshader;
+			path = playground/shader;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0370C1DF3196407099C44E39 /* RelWithDebInfo */ = {

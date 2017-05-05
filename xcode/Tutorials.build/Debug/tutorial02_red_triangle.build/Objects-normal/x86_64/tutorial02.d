@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/fumiya.amano/Documents/works/ogl/playground/playground.cpp \
+  /Users/fumiya.amano/Documents/works/ogl/tutorial02_red_triangle/tutorial02.cpp \
   /Users/fumiya.amano/Documents/works/ogl/external/glew-1.13.0/include/GL/glew.h \
   /Users/fumiya.amano/Documents/works/ogl/external/glfw-3.1.2/include/GLFW/glfw3.h \
   /Users/fumiya.amano/Documents/works/ogl/external/glm-0.9.7.1/glm/glm.hpp \
